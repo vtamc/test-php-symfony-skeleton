@@ -11,3 +11,12 @@ services:
     build: ./docker/php-fpm
     volumes:
       - .:/app
+
+  php-cli:
+    build: ./docker/php-cli
+    volumes:
+      - .:/app
+      - composer:/root/.composer/cache
+
+volumes:
+  composer:
