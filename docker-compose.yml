@@ -44,14 +44,8 @@ services:
       PGADMIN_CONFIG_SERVER_MODE: 'False'
     volumes:
       - ./docker/pgadmin/servers.json:/pgadmin4/servers.json
-
-  #adminer:
-  #  image: adminer
-  #  restart: always
-  #  ports:
-  #    - 8081:8080
-  #  depends_on:
-  #    - postgresql
+    depends_on:
+      - postgresql
 
 volumes:
   composer:
