@@ -26,9 +26,9 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_PASSWORD: root
-      POSTGRES_USER: root
-      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_PASSWORD: 'root'
+      POSTGRES_USER: 'root'
+      PGDATA: '/var/lib/postgresql/data/pgdata'
     volumes:
       - ./docker/postgresql/data:/var/lib/postgresql/data
 
@@ -38,8 +38,9 @@ services:
     ports:
         - 8081:80
     environment:
-      PGADMIN_DEFAULT_EMAIL: dev@example.com
-      PGADMIN_DEFAULT_PASSWORD: root
+      PGADMIN_DEFAULT_EMAIL: 'root@example.com'
+      PGADMIN_DEFAULT_PASSWORD: 'root'
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
 
   #adminer:
   #  image: adminer
