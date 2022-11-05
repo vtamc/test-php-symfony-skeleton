@@ -29,9 +29,8 @@ services:
       POSTGRES_USER: 'root'
       POSTGRES_PASSWORD: 'root'
       POSTGRES_HOST_AUTH_METHOD: 'trust'
-      PGDATA: '/var/lib/postgresql/data/pgdata'
     volumes:
-      - ./docker/postgresql/data:/var/lib/postgresql/data
+      - postgresql:/var/lib/postgresql/data
 
   pgadmin:
     build: ./docker/pgadmin
@@ -42,10 +41,9 @@ services:
       PGADMIN_DEFAULT_EMAIL: 'root@example.com'
       PGADMIN_DEFAULT_PASSWORD: 'root'
       PGADMIN_CONFIG_SERVER_MODE: 'False'
-    volumes:
-      - ./docker/pgadmin/servers.json:/pgadmin4/servers.json
     depends_on:
       - postgresql
 
 volumes:
   composer:
+  postgresql:
