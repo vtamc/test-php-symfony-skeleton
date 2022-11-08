@@ -1,4 +1,4 @@
-FROM php:8.1-fpm
+FROM php:8.1.0-fpm
 
 RUN curl -sSLf \
         -o /usr/local/bin/install-php-extensions \

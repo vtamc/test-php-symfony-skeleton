@@ -15,8 +15,8 @@ docker-up-foreground:
 
 docker-restart: docker-down docker-up
 
-migrate: docker-up
+migrate:
 	docker-compose run php-cli php /app/symfony/bin/console doctrine:migrations:migrate
 
-test: docker-up
+test:
 	docker-compose run php-cli php /app/symfony/bin/phpunit
