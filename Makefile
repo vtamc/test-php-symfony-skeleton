@@ -4,6 +4,9 @@ composer-install:
 composer-update:
 	docker-compose run php-cli composer update --working-dir=/app/symfony
 
+docker-build:
+	docker-compose build --pull
+
 docker-down:
 	docker-compose down -v
 
