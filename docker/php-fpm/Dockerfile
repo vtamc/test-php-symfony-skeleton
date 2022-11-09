@@ -6,3 +6,5 @@ RUN curl -sSLf \
     chmod +x /usr/local/bin/install-php-extensions
 
 RUN install-php-extensions pdo_pgsql
+
+WORKDIR '/app/symfony'

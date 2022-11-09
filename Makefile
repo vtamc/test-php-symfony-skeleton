@@ -1,8 +1,8 @@
 composer-install:
-	docker-compose run php-cli composer install --working-dir=/app/symfony
+	docker-compose run php-cli composer install
 
 composer-update:
-	docker-compose run php-cli composer update --working-dir=/app/symfony
+	docker-compose run php-cli composer update
 
 docker-build:
 	docker-compose build --pull
@@ -19,7 +19,10 @@ docker-up-foreground:
 docker-restart: docker-down docker-up
 
 migrate:
-	docker-compose run php-cli php /app/symfony/bin/console doctrine:migrations:migrate
+	docker-compose run php-cli php bin/console doctrine:migrations:migrate
 
 test:
-	docker-compose run php-cli php /app/symfony/bin/phpunit
+	docker-compose run php-cli php bin/phpunit
+
+check:
+	docker-compose run php-cli php vendor/bin/phpstan

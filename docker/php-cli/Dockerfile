@@ -12,3 +12,5 @@ RUN install-php-extensions pdo_pgsql
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/bin --filename=composer --queit
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
+
+WORKDIR '/app/symfony'
