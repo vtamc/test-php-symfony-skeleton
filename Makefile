@@ -8,7 +8,7 @@ docker-build:
 	docker-compose build --pull
 
 docker-down:
-	docker-compose down -v
+	docker-compose down
 
 docker-up:
 	docker-compose up -d
