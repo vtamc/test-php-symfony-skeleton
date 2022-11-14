@@ -6,15 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-use App\Entity\User;
-use Symfony\Component\Security\Http\Attribute\CurrentUser;
-use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
-
 class AppApiLoginController extends AbstractController
 {
     #[Route('/api/login', name: 'app_api_login')]
-    public function index(JWTTokenManagerInterface $JWTManager, #[CurrentUser] ?User $user): JsonResponse
+    public function index(): JsonResponse
     {
+        $user = $this->getUser();
+
         if (null === $user) {
             return $this->json([
                 'message' => 'missing credentials',
