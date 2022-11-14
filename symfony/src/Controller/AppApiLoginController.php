@@ -5,14 +5,14 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Http\Attribute\CurrentUser;
 
 class AppApiLoginController extends AbstractController
 {
     #[Route('/api/login', name: 'app_api_login')]
-    public function index(): JsonResponse
+    public function index(#[CurrentUser] ?UserInterface $user): JsonResponse
     {
-        $user = $this->getUser();
-
         if (null === $user) {
             return $this->json([
                 'message' => 'missing credentials',
