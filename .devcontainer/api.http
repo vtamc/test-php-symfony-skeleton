@@ -1,3 +1,5 @@
+### docs https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
 POST http://nginx/api/login
 content-type: application/json
 
