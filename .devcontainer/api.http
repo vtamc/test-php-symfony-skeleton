@@ -1,0 +1,10 @@
+POST http://nginx/api/login
+content-type: application/json
+
+{
+    "username": "user@test.com",
+    "password": "test"
+}
+
+###
+
