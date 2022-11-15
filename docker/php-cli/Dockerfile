@@ -7,7 +7,7 @@ RUN curl -sSLf \
         https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions && \
     chmod +x /usr/local/bin/install-php-extensions
 
-RUN install-php-extensions pdo_pgsql
+RUN install-php-extensions pdo_pgsql xdebug
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/bin --filename=composer --queit
 
